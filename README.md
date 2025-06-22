@@ -7,7 +7,8 @@ A full-stack job portal web application where companies can post jobs and manage
 ## 🚀 Features
 
 ### 🏢 Company Panel
-- Secure registration & login with JWT + bcrypt
+- Secure registration & login by Clerk authentication
+- Clerk handles session management and role-based access
 - Create and delete job postings
 - View applicants for each job
 - Accept or reject applications
@@ -26,7 +27,7 @@ A full-stack job portal web application where companies can post jobs and manage
 - **Frontend**: React.js, Tailwind CSS,Vite 
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB
-- **Authentication**: JWT , bcrypt.js
+- **Authentication**: Clerk(auth provider),JWT , bcrypt.js
 - **File Handling**: Multer (for resume uploads)   
 - **Formatting**: moment.js (date), k-convert (salary)  
 - **Deployment**: Vercel 
@@ -35,10 +36,10 @@ A full-stack job portal web application where companies can post jobs and manage
 
 ## 🔐 Authentication
 
-- Passwords are hashed using **bcrypt** before being stored.
-- Authenticated sessions are managed using **JWT tokens**.
-- Tokens are sent with each API request in headers and validated by backend middleware.
-- Role-based access ensures companies and candidates access their own dashboards only.
+- Implemented **Clerk authentication** for secure user sign-in and session management.
+- Role-based access control is enforced using Clerk's user metadata and session tokens.
+- Passwords and sessions are managed by Clerk, improving security and reducing auth complexity.
+- Clerk protects frontend routes and manages sign-in, sign-up, and session persistence out of the box.
 
 ---
 
